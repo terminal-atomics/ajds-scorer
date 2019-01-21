@@ -35,9 +35,9 @@
 	let canvas = document.getElementById("cnv");
 	let ctx = canvas.getContext("2d");
 	ctx.fillStyle = "white";
-	ctx.lineWidth = 20;
+	ctx.lineWidth = 12;
 	ctx.lineCap = "round";
-	ctx.font = "72px Roboto";
+	ctx.font = "64px 'Open Sans'";
 	ctx.textAlign = "center";
 	ctx.textBaseline = "middle";
 	let bar = new ProgressBar(ctx, 25, .01);
@@ -71,9 +71,9 @@
 			}
 			document.getElementById("status").style.display = "none";
 			let user = await res.json();
-			canvas.style.display = "block";
 			let score = await AJDSscore(user);
 			bar.progress = score * 2 / 100;
+			canvas.style.display = "block";
 		}).catch(err => {
 			document.getElementById("status").innerHTML = "Error";
 		});
