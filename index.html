@@ -32,8 +32,8 @@
 <script>
 	window.addEventListener("load",function(){
 		let token = getAllUrlParams(location.href.toString()).access_token;
-		if(token == undefined) window.location.replace("https://discordapp.com/api/oauth2/authorize?client_id=536656002578251806&redirect_uri=http%3A%2F%2Flocalhost%3A8887&response_type=token&scope=identify");
-		//if(token == undefined) window.location.replace("https://discordapp.com/api/oauth2/authorize?client_id=536656002578251806&redirect_uri=https%3A%2F%2Fterminal-atomics.github.io%2Fajds-scorer&response_type=token&scope=identify");
+		//if(token == undefined) window.location.replace("https://discordapp.com/api/oauth2/authorize?client_id=536656002578251806&redirect_uri=http%3A%2F%2Flocalhost%3A8887&response_type=token&scope=identify");
+		if(token == undefined) window.location.replace("https://discordapp.com/api/oauth2/authorize?client_id=536656002578251806&redirect_uri=https%3A%2F%2Fterminal-atomics.github.io%2Fajds-scorer&response_type=token&scope=identify");
 		console.log(token);
 		let headers = new Headers();
 		console.log("Bearer " + token);
