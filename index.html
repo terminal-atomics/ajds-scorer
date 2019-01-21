@@ -72,7 +72,7 @@
 			document.getElementById("status").style.display = "none";
 			let user = await res.json();
 			canvas.style.display = "block";
-			bar.progress = (await AJDSscore(user)) * 2 / 100;
+			bar.progress = (AJDSscore(user)) * 2 / 100;
 		}).catch(err => {
 			document.getElementById("status").innerHTML = "Error";
 		});

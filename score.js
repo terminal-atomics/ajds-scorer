@@ -1,4 +1,4 @@
-async function AJDSscore(user) {
+function AJDSscore(user) {
 	if (user.bot) return 50;
 	let score = 0;
 	if (user.verified) score += 5;
