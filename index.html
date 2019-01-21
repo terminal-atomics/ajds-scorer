@@ -75,7 +75,9 @@
 			bar.progress = score * 2 / 100;
 			canvas.style.display = "block";
 		}).catch(err => {
-			document.getElementById("status").innerHTML = "Error";
+			document.getElementById("status").style.display = "block";
+			document.getElementById("status").innerText = "Error";
+			console.log(err);
 		});
 	});
 </script>

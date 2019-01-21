@@ -1,6 +1,9 @@
 async function AJDSscore(user) {
 	if (user.bot) return 50;
 	let score = 0;
+	let age = new Date().getTime() - ((user.id >> 22 >>> 0) + 1420070400000);
+	age = Math.floor(age / 1000 / 60 / 60 / 24);
+	score += Math.min(Math.max(0, age / 2 - 1)	, 10);
 	if (user.verified) score += 5;
 	if (user.avatar != null) score += 5;
 	//TODO: Non-simple
@@ -14,7 +17,6 @@ async function AJDSscore(user) {
 	let scorecard = swearjar.scorecard(user.username);
 	let words = 0;
 	Object.keys(scorecard).forEach(e => {
-		console.log(e);
 		words += scorecard[e];
 	});
 	let response = await fetch("https://www.purgomalum.com/service/containsprofanity?text=" + encodeURIComponent(user.username));
